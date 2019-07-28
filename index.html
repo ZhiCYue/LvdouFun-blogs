@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>绿豆饭</title>
+  <meta name="keywords" content="lvdou" />
+  <meta name="description" content="lvdou" />
+  <link rel="shortcut icon" href="favicon.ico" >
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a href="index.html"><span>LvdouFun 🌱</span></a>
+    <nav>
+      <a href="index.html">Menu</a>
+      <a href="index.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="main">
+  <aside>
+    <h1>目录</h1>
+    <ul>
+      <li><a>字面量定义</a></li>
+      <li>
+        <span>RegExp构造器</span>
+        <ul>
+          <li><a>实例属性</a></li>
+          <li><a>实例方法</a></li>
+          <li><a>构造器属性</a></li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+  <article>
+    <ul>
+      <li><time>2019-07-21</time></li>
+      <li>阅读：201</li>
+    </ul>
+    <h1>JavaScript 高级程序之 RegExp</h1>
+    <p><span class="red-mark">检测工具：</span><a class="link" href="https://regexper.com/" target="_blank">https://regexper.com/</a></p>
+    <h3>字面量形式</h3>
+    <p class="code-wrapper"><code>var expression = / pattern / flags ;</code></p>
+    <p>其中的模式(pattern)部分可以是任何简单或复杂的正则表达式，可以包含字符类、限定符、分组、 向前查找以及反向引用。每个正则表达式都可带有一或多个标志(flags)，用以标明正则表达式的行为。</p>
+    <p>正则表达式的匹配模式支持下列 3 个标志：</p>
+    <ul style="margin-left: 20px;">
+      <li>1. g: 表示全局(global)模式，即模式将被应用于所有字符串，而非在发现第一个匹配项时立即停止;</li>
+      <li>2. i: 表示不区分大小写(case-insensitive)模式，即在确定匹配项时忽略模式与字符串的大小写;</li>
+      <li>3. m: 表示多行(multiline)模式，即在到达一行文本末尾时还会继续查找下一行中是否存在与模式匹配的项。</li>
+    </ul>
+    <p>一个正则表达式就是一个模式与上述 3 个标志的组合体。模式中使用的所有元字符都必须转义。</p>
+    <p><span class="red-mark">正则表达式中的元字符包括: ( [ { \ ^ $ | ) ? * + . ] }</span></p>
+    <p class="code-wrapper"><code>
+        /** 匹配第一个"bat"或"cat"，不区分大小写 */<br/>
+        var pattern1 = /[bc]at/i;
+        <br/><br/>
+        /** 匹配第一个" [bc]at"，不区分大小写 */<br/>
+        var pattern2 = /\[bc\]at/i;
+        <br/><br/>
+        /** 匹配所有以"at"结尾的 3 个字符的组合，不区分大小写 */<br/>
+        var pattern3 = /.at/gi;
+        <br/><br/>
+        /** 匹配所有".at"，不区分大小写 */<br/>
+        var pattern4 = /\.at/gi;
+    </code></p>
+    
+    <h3>RegExp构造器</h3>
+    <p>可以 使用字面量定义的任何表达式，都可以使用构造函数来定义，如下面的例子所示：</p>
+    <p class="code-wrapper"><code>
+        /** 匹配第一个"bat"或"cat"，不区分大小写 */<br/>
+        var pattern1 = /[bc]at/i;
+        <br/><br/>
+        /** 与 pattern1 相同，只不过是使用构造函数创建的 */<br/>
+        var pattern2 = new RegExp("[bc]at", "i");
+    </code></p>
+    <p class="caution">要注意的是，传递给 RegExp 构造 函数的两个参数都是字符串(不能把正则表达式字面量传递给 RegExp 构造函数)。</p>
+    
+    <p>Zepp Labs, Inc, the leader in smart sports tracking technologies, announced the launch of a jointly developed connected tennis sensor with the global leader of tennis gear - HEAD.</p>
+    <p>This revolutionary sensor is compatible with HEAD Graphene XT and HEAD Graphene Touch racquets* with no affect on racquet weight and balance. It’s also water resistant and equipped with the latest Bluetooth standard technology.</p>
+    <p>It offers four unique modes: play, train, compete and 3D serve, allowing tennis players to analyze their every move on the court, track their performance and compare their stats with friends or rivals.</p>
+
+  </article>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Copyright © 2019 lvdoufun.com All Rights Reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

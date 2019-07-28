@@ -1,0 +1,64 @@
+body { background-color: #fff; -webkit-font-smoothing: antialiased; }
+h1 { margin: 1.4em 0; }
+h3 { margin: 1em 0; }
+p { font-family: Elena; }
+p::selection, h1::selection, h3::selection, code::selection { background: #d33a2c; color: #fff; }
+ul > li { line-height: 200%; }
+
+/** header */
+header { height: 60px; line-height: 60px; font-size: 15px; border-bottom: 1px solid #c3c3c3; }
+header .container { height: 100%; overflow: hidden; max-width: 71.25em; margin-left: auto; margin-right: auto; }
+header .container > a { float: left; }
+header .container > a img { width: 40px; vertical-align: middle; }
+header .container > a span { margin-left: 20px; font-weight: bold; color: #000; }
+header .container > nav { overflow: hidden; float: right; }
+header .container > nav a { color: #333; margin: 0 10px; display: inline-block; }
+header .container > nav a:hover { color: #000; }
+
+/* main */
+.main { position: relative; width: 1200px; margin: 10px auto 0; height: calc(100vh - 134px); overflow-y: scroll; }
+.main > aside { float: left; width: 300px; width: 280px; padding: 20px; background: #fff; }
+.main > aside > ul { position: relative; display: block; margin: 10px 0; height: 74px; padding-inline-start: 20px; }
+.main > aside > ul > li { font-size: 15px; cursor: pointer; list-style: square; margin: 6px 0; }
+.main > aside > ul > li:hover { font-weight: bold; }
+.main > aside > ul > li > ul { font-weight: normal; margin: 6px 0; }
+.main > aside > ul > li > ul > li { color: #333; margin: 10px; }
+.main > aside > ul > li > ul > li:hover { font-weight: bold; }
+.main > article { background: #fff; overflow: hidden; margin-left: 320px; padding: 20px 20px; }
+.main > article > ul:first-child { color: #666; font-style: italic; }
+.main > article > ul:first-child > li { display: inline-block; }
+.main > article > h1 { font-size: 20px; }
+.main > article > p { margin: .375em 0; font-size: 1rem; line-height: 200%; color: #333; }
+
+/* footer */
+footer { position: relative; background: #282B2D; }
+footer > .container { width: 1200px; height: 64px; margin: 0 auto; }
+footer > .container > p { line-height: 64px; text-align: center; color: #fff; }
+
+.link {
+  text-decoration: underline;
+  color: #006fc6;
+  cursor: pointer;
+}
+.link:hover {
+  color: #014272;
+}
+
+.red-mark {
+  color: #d33a2c;
+  font-weight: bold;
+}
+
+.code-wrapper {
+  background: #f5f2f0;
+  padding: 1em;
+  border-radius: 8px;
+}
+
+.code-wrapper code {
+  font-size: .8rem;
+}
+
+.caution {
+  font-family: Mija;
+}
