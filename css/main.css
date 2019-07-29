@@ -2,7 +2,7 @@ body { background-color: #fff; -webkit-font-smoothing: antialiased; }
 h1 { margin: 1.4em 0; }
 h3 { margin: 1em 0; }
 p { font-family: Elena; }
-p::selection, h1::selection, h3::selection, code::selection { background: #d33a2c; color: #fff; }
+p::selection, h1::selection, h3::selection, code::selection { background: #53bb00; color: #fff; }
 ul > li { line-height: 200%; }
 
 /** header */

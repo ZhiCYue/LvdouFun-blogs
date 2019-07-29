@@ -78,6 +78,9 @@
         var pattern2 = new RegExp("[bc]at", "i");
     </code></p>
     <p class="caution">要注意的是，传递给 RegExp 构造 函数的两个参数都是字符串(不能把正则表达式字面量传递给 RegExp 构造函数)。</p>
+    <p><span class="red-mark">RegExp 构造 函数的模式参数是字符串，所有元字符都必须双重转义。</span></p>
+    <p>例如\n(字符\在字符串中通常被转义为\，而在正则表达式字符串中就 会变成\\)。</p>
+    <p>下表给出了一些模式，左边是这些模式的字面量形式，右边是使用 RegExp 构造函数定义 相同模式时使用的字符串：</p>
     
     <p>Zepp Labs, Inc, the leader in smart sports tracking technologies, announced the launch of a jointly developed connected tennis sensor with the global leader of tennis gear - HEAD.</p>
     <p>This revolutionary sensor is compatible with HEAD Graphene XT and HEAD Graphene Touch racquets* with no affect on racquet weight and balance. It’s also water resistant and equipped with the latest Bluetooth standard technology.</p>
