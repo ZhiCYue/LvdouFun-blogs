@@ -25,6 +25,7 @@ header .container > nav a:hover { color: #000; }
 .main > aside > ul > li > ul { font-weight: normal; margin: 6px 0; }
 .main > aside > ul > li > ul > li { color: #333; margin: 10px; }
 .main > aside > ul > li > ul > li:hover { font-weight: bold; }
+.main > aside li a { display: inline-block; width: 100%; }
 
 /* main article */
 .main > article { background: #fff; overflow: hidden; margin-left: 280px; padding: 20px 20px 40px; }
