@@ -1,6 +1,6 @@
 (function(scope){
   
-  const host = 'http://127.0.0.1:7001'
+  const host = 'http://api.lvdouFun.com:7001'
 
   function update({ data }) {
     document.getElementById('clickTotal').innerText = data.total
