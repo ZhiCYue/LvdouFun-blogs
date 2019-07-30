@@ -26,7 +26,7 @@ a {
   text-decoration: none;
 }
 
-:link, :visited { text-decoration:none }
+:link, :visited { text-decoration:none; }
 
 img {
 	border-style: none;

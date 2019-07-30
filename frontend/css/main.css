@@ -4,6 +4,7 @@ h3 { margin: 1em 0; }
 p { font-family: Elena; }
 p::selection, h1::selection, h3::selection, code::selection { background: #53bb00; color: #fff; }
 ul > li { line-height: 200%; }
+aside :link, aside :visited { color: #2b2a2a; }
 
 /** header */
 header { height: 60px; line-height: 60px; font-size: 15px; border-bottom: 1px solid #e4e2e2; }
