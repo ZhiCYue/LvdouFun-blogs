@@ -63,7 +63,7 @@ ul.table > li ul li:nth-child(n + 2) { border-left: 1px solid #c3c3c3; }
 }
 
 .red-mark {
-  color: #d33a2c;
+  color: #d33a2c !important;
   font-weight: bold;
 }
 

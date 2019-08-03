@@ -34,6 +34,8 @@
           <li><a href="#cont">构造器属性</a></li>
         </ul>
       </li>
+      <li><a href="#greedy">贪婪& 懒惰模式</a></li>
+      <li><a href="#ungroup">非捕获分组等其他</a></li>
     </ul>
   </aside>
   <article>
@@ -303,6 +305,44 @@
 
     <p>这里创建了一个包含两个捕获组的模式，并用该模式测试了一个字符串。即使 test()方法只返回 一个布尔值，但 RegExp 构造函数的属性$1 和$2 也会被匹配相应捕获组的字符串自动填充。</p>
 
+    <h3 id="greedy">贪婪、懒惰模式</h3>
+
+    <p>正则表达式中的限定符如下：* {n,m} {n,} ? +</p>
+    <p class="red-mark">{n,m} 中的逗号后面不能出现空格</p>
+    <p>其中限定默认是贪婪模式的，即会优先匹配最多的。如果要改变正则表达式优先最小匹配，可以在限定符后面添加 ？</p>
+    <p class="code-wrapper"><code>
+      var r = /\d{1,3}/;<br/>
+      var m = r.exec('123');<br/><br/>
+
+      m[0] === '123'  // true<br/>
+
+      <br/>
+      r = /\d{1,3}?/;<br/>
+      m = r.exec('123');<br/><br/>
+
+      m[0] === '1' // true 
+
+    </code></p>
+
+
+    <h3 id="ungroup">非捕获分组等其他</h3>
+
+    <p class="red-mark">(?:pattern)</p>
+    <p>匹配pattern 但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储。例如：'industry|industries' 的另外一种表达形式，可以是'industr(?:y|ies)'</p>
+
+    <p class="red-mark">(?=pattern)</p>
+    <p>正向肯定预查。在任何匹配pattern 的字符串开始处匹配查找字符串。这是一个非获取匹配。例如"Windows(?=95|98|200)" 能够匹配"Windows2000" 中的"Windows"，但是不能够匹配"Windows3.1" 中的“Windows”。</p>
+
+    <p class="red-mark">(?!pattern)</p>
+    <p>正向否定预检查。和(?=pattern) 相对。</p>
+
+    <p class="red-mark">(?&lt;=pattern)</p>
+    <p>反向肯定预查。例如，“(?&lt;=95|2000)Windows” 能匹配“2000Windows” 中的“Windows”，但不能匹配“3.1Windows” 中的“Windows”.</p>
+
+    <p class="red-mark">(?&lt;!pattern)</p>
+    <p>反向否定预查。与(?&lt;=pattern) 相对。</p>
+
+    <br/>
     <p>至此，结束。</p>
     
   </article>
