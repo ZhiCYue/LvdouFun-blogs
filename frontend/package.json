@@ -1,0 +1,23 @@
+{
+  "name": "blogs",
+  "version": "1.0.0",
+  "description": "LvdouFun 网站的博客",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZhiCYue/LvdouFun-blogs.git"
+  },
+  "author": "yuezhichao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZhiCYue/LvdouFun-blogs/issues"
+  },
+  "homepage": "https://github.com/ZhiCYue/LvdouFun-blogs#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
+  }
+}
