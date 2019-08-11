@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>图解 JavaScript 原型、原型链</title>
+  <meta name="keywords" content="lvdou" />
+  <meta name="description" content="lvdou" />
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  
+  <header>
+    <div class="container">
+      <a href="../index.html"><span>LvdouFun 🌱</span></a>
+      <nav>
+        <a href="../menu.html">Menu</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="main">
+    <aside>
+      <h1>目录</h1>
+      <ul>
+        <li><a href="#referance">参考资料</a></li>
+        <li><a href="#chart">图表说明</a></li>
+        <li><a href="#part1">Part 1</a></li>
+        <li><a href="#part2">Part 2</a></li>
+      </ul>
+      <div class="lvdou"></div>
+    </aside>
+
+    <article>
+      <ul>
+        <li><time>2019-08-11</time></li>
+        <li>阅读：<span id="clickTotal"></span></li>
+      </ul>
+
+      <h1>图解 JavaScript 原型、原型链</h1>
+      <p id="referance"><span class="red-mark">参考资料：</span><br/>
+        <a class="link" href="https://www.jianshu.com/p/652991a67186" target="_blank">Js 原型链</a><br/>
+        <a class="link" href="https://www.jianshu.com/p/9610b9ba1aca" target="_blank">Web前端------JS原型、原型链详解</a>
+      </p>
+
+      <h3 id="chart">图表</h3>
+      <p>经典图：</p>
+      <img src="../images/prototype1.png" width="80%">
+      <p>自己绘制的图：</p>
+      <img src="../images/prototype2.png" width="80%">
+
+      <h3 id="part1">Part 1</h3>
+      <p>小测试检验js 原型链的理解：</p>
+      <ul style="margin-left: 10px;">
+        <li>1. <span class="markdown-red">persion1.__proto__</span>是什么？</li>
+        <li>2. <span class="markdown-red">Persion.__proto__</span>是什么？</li>
+        <li>3. <span class="markdown-red">Persion.prototype.__proto__</span>是什么？</li>
+        <li>4. <span class="markdown-red">Object.__proto__</span>是什么？</li>
+        <li>5. <span class="markdown-red">Object.prototype.__proto__</span>是什么？</li>
+      </ul>
+      <p>答案：</p>
+      <p>
+          第一题：<br/>
+        因为<span class="markdown-red">persion1.__proto__ === persion1 的构造函数.prototype</span><br/>
+        因为<span class="markdown-red">persion1 的构造函数 === Persioon</span><br/>
+        所以<span class="markdown-red">persion1.__proto__ === Persion.prototype</span>
+      </p><br/>
+      <p>
+        第二题：<br/>
+        因为<span class="markdown-red">Persion.__proto__ === Persion 的构造函数.prototype</span><br/>
+        因为<span class="markdown-red">Persion的构造函数 === Function</span><br/>
+        所以<span class="markdown-red">Persion.__proto__ === Function.prototype</span>
+      </p>
+      <br/>
+      <p>
+        第三题：<br/>
+        因为<span class="markdown-red">Persion.prototype</span>是一个普通对象，我们暂无需关心是什么对象，只要记住它是一个普通对象，<br/>
+        因为一个普通对象的构造函数 === Object <br/>
+        所以<span class="markdown-red">Persion.prototype.__proto__ === Object.prototype</span>
+      </p><br/>
+      <p>
+        第四题：参照第二题，因为Persion 和Object 一样都是构造函数
+      </p><br/>
+      <p>
+        第五题：<br/>
+        <span class="markdown-red">Object.prototype</span> 对象也有proto 属性，但比较特殊，为null。因为null 处于原型链的顶端。<br/>
+        <span class="markdown-red">Object.prototype.__proto__ === null</span>
+      </p>
+
+      <br/>
+
+      <h3 id="part2">Part 2</h3>
+      <p>在原型链上查找属性比较耗时，对性能有副作用，这在性能要求苛刻的情况下很重要。另外，试图访问不存在的属性时会遍历整个原型链。</p><br/>
+      <p>
+        <span class="markdown-red">hasOwnProperty</span> 是JavaScript 中处理属性并且不会遍历原型链的方法之一。（另一种方法：Object.keys()）<br/>
+        <span class="markdown-red">prototype</span>和 <span class="markdown-red">Object.getPrototypeOf</span>的使用<br/>
+      </p>
+      <p class="code-wrapper"><code>
+        function A(){} <br/>
+        A.prototype = { <br/>
+          doSomethine: function() { <br/>
+            // ... <br/>
+          } <br/>
+        } <br/>
+        var a1 = new A() <br/>
+        var a2 = new A()
+      </code></p>
+      <p>像上面的例子中，<span class="markdown-red">a1.doSomethine</span>事实上会指向<span class="markdown-red">Object.getPrototypeOf(a1).doSomethine</span>，它就是
+        你在<span class="markdown-red">A.prototype.doSomething</span>中定义的内容。<br/>
+        <br/>
+        也就是说：<span class="markdown-red">Object.getPrototypeOf(a1).doSomething == Object.getPrototypeOf(a2).doSomethine == A.prototype.doSomething</span>。
+        <br/><br/>
+        补充：实际上当执行<span class="markdown-red">a1.doSomething()</span>相当于执行<span class="markdown-red">Object.getPrototypeOf(a1).doSomething.call(a1) == A.prototype.doSomething.call(a1)</span>
+      </p>
+      <br/>
+      <br/>
+      <p>简而言之，prototype 是用于类的，而Object.getPrototypeOf() 是用于实例（instance），两者功能一致。</p>
+
+      <br/>
+      <p>至此，结束。</p>
+    </article>
+
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>Copyright © 2019 lvdoufun.com All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

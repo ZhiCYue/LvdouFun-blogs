@@ -4,7 +4,8 @@
   "description": "LvdouFun 网站的博客",
   "main": "index.js",
   "scripts": {
-    "build": "gulp sass"
+    "build": "gulp sass",
+    "watch": "gulp sass:watch"
   },
   "repository": {
     "type": "git",

@@ -2,7 +2,7 @@ body { background-color: #fff; -webkit-font-smoothing: antialiased; min-width: 1
 h1 { margin: 1.4em 0; }
 h3 { margin: 1em 0; }
 p { font-family: Elena; }
-p::selection, h1::selection, h3::selection, code::selection { background: #53bb00; color: #fff; }
+p::selection, h1::selection, h3::selection, code::selection, span::selection { background: #53bb00; color: #fff; }
 ul > li { line-height: 200%; }
 aside :link, aside :visited { color: #2b2a2a; }
 
@@ -92,4 +92,11 @@ ul.table > li ul li:nth-child(n + 2) { border-left: 1px solid #c3c3c3; }
 
 .caution {
   font-family: Mija;
+}
+
+.markdown-red {
+  word-wrap: break-word;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 2px;
 }
