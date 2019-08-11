@@ -17,7 +17,7 @@ header .container > nav a { color: #333; margin: 0 10px; display: inline-block; 
 header .container > nav a:hover { color: #000; }
 
 /* main aside */
-.main { position: relative; width: 1200px; margin: 10px auto 0; height: calc(100vh - 134px); overflow-y: scroll; }
+.main { position: relative; width: 1200px; margin: 10px auto 0; /* height: calc(100vh - 134px); overflow-y: scroll; */ }
 .main > aside { position: fixed; float: left; width: 300px; width: 240px; padding: 20px; background: #fff; height: calc(100% - 180px);}
 .main > aside > ul { position: relative; display: block; margin: 10px 0; padding-inline-start: 20px; }
 .main > aside > ul > li { font-size: 15px; cursor: pointer; list-style: square; margin: 6px 0; }
@@ -28,7 +28,7 @@ header .container > nav a:hover { color: #000; }
 .main > aside li a { display: inline-block; width: 100%; }
 
 /* main article */
-.main > article { background: #fff; overflow: hidden; margin-left: 280px; padding: 20px 20px 40px; }
+.main > article { background: #fff; overflow: scroll; margin-left: 280px; padding: 20px 20px 40px; }
 .main > article > ul:first-child { color: #666; font-style: italic; }
 .main > article > ul:first-child > li { display: inline-block; }
 .main > article > h1 { font-size: 20px; }

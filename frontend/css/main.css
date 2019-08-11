@@ -66,8 +66,7 @@ header .container > nav a:hover {
   position: relative;
   width: 1200px;
   margin: 10px auto 0;
-  height: calc(100vh - 134px);
-  overflow-y: scroll; }
+  /* height: calc(100vh - 134px); overflow-y: scroll; */ }
 
 .main > aside {
   position: fixed;
@@ -111,7 +110,7 @@ header .container > nav a:hover {
 /* main article */
 .main > article {
   background: #fff;
-  overflow: hidden;
+  overflow: scroll;
   margin-left: 280px;
   padding: 20px 20px 40px; }
 
